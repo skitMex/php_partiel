@@ -42,6 +42,7 @@ $resPerso = $sqlPerso->fetchAll(PDO::FETCH_ASSOC);
 <?php
  echo "<h2>".$sqlmanga['titre']"</h2>";
 foreach ($resmanga as $manga):
-    echo "<a href='manga.php?$manga[id]'> !</a>";
+    echo "<p>".$personnage['description']."</p>";
+    echo "<a href='manga.php?$personnage[id]'> details</a>";
 endforeach; ?>
  
