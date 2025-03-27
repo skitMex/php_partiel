@@ -19,7 +19,7 @@ $sqlPerso = $dbPDO->prepare("SELECT *FROM personnage");
 $sqlPerso->execute();
 $resPerso = $sqlPerso->fetchAll(PDO::FETCH_ASSOC);
 ?>
-?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -28,20 +28,14 @@ $resPerso = $sqlPerso->fetchAll(PDO::FETCH_ASSOC);
     <title>Gestion des mangas</title>
 </head>
 <body>
-<h1>TOp manga</h1>
-
-<ul class="manga">
-
-    <?php foreach ($resmanga as $manga): ?>
-        <li>
-            <a href="index.php"><?= htmlspecialchars($manga['titre']) ?></a>
-            <p><?= htmlspecialchars($manga['annee de pub']) ?></p>
-        </li>
-    <?php endforeach; ?>
-</ul>
 <?php
- echo "<h2>".$sqlmanga['titre']"</h2>";
 foreach ($resmanga as $manga):
-    echo "<a href='manga.php?$manga[id]'> !</a>";
-endforeach; ?>
- 
+echo "<h1>".$_GET['description']." ".$_GET['auteur']"".$_GET['annee de publication']"".$_GET['personnage']"</h1>";
+
+echo "<p>".$sqlAuteur['nom'] .$manga['annee de pub']."</p>";
+
+echo "<p>".$manga['description']"</p>";
+    echo "<"h2">Personnages</h2>";
+    foreach ($resPerso as $personnage):
+        echo "<p>".$personnage['nom']."</p>";
+?>
