@@ -29,13 +29,17 @@ $resPerso = $sqlPerso->fetchAll(PDO::FETCH_ASSOC);
 </head>
 <body>
 <?php
-foreach ($resmanga as $manga):
-echo "<h1>".$_GET['description']." ".$_GET['auteur']"".$_GET['annee de publication']"".$_GET['personnage']"</h1>";
+foreach ($resmanga as $manga): ?>
+echo "<h1>"<?=.$_GET['description']." ".$_GET['auteur']"".$_GET['annee de publication']"".$_GET['personnage']"?></h1>";
 
-echo "<p>".$sqlAuteur['nom'] .$manga['annee de pub']."</p>";
+echo "<p>"<?=.$sqlAuteur['nom'] .$manga['annee de pub'].?>"</p>";
 
-echo "<p>".$manga['description']"</p>";
+echo "<p>"<?=.$manga['description']"?></p>";
+<? endforeach; ?>
     echo "<"h2">Personnages</h2>";
-    foreach ($resPerso as $personnage):
-        echo "<p>".$personnage['nom']."</p>";
+   <? foreach ($resPerso as $personnage): ?>
+        echo "<p>"<?=.$personnage['nom']."?></p>";
+   <?php endforeach; ?>
 ?>
+
+<?php
